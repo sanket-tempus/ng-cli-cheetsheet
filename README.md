@@ -355,3 +355,20 @@ If you specify a different environment, the build process will use the correspon
 </ul>
 In <b>src/main.ts</b>, you can access the environment settings from your code by importing <b>environments/environment</b>
 <hr>
+
+<b>Ejecting your application</b><br>
+<ul>
+<li>Angular CLI provides a command to decouple your application from Angular CLI.</li>
+<li>By default, Angular CLI manages the underlying webpack configuration for you so you don’t have to deal with its complexity.</li>
+<li>If, at any given time, you wish to manually configure webpack and you no longer want to use Angular CLI with your Angular application, you can run: <b>ng eject</b></li>
+</ul>
+<i>Behind the scene</i><br>
+<ol>
+<li>A property ejected: true is added to the <b>.angular-cli.json.</b> file</li>
+<li>A <b>webpack.config.js</b> file is generated in the root of your application with a standalone webpack configuration so you can build your project without Angular CLI</li>
+<li>The <b>build</b> script in your <b>package.json</b> is updated so you can run <b>npm run build</b> to build your project</li>
+<li>The <b>test</b> script in your <b>package.json</b> is updated so you can run <b>npm run test</b> or <b>npm test</b> to run your unit tests</li>
+<li>The <b>start</b> script in your <b>package.json</b> is updated so you can run <b>npm run start</b> or <b>npm start</b> to start a development server</li>
+<li>The <b>e2e</b> script in your <b>package.json</b> is updated so you can run <b>npm run e2e</b> to run your end-to-end tests</li>
+</ol>
+After ejecting your application, you can manually update the webpack configuration to your liking and the Angular CLI commands will no longer work.
